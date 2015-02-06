@@ -22,7 +22,7 @@ class MFSBasis2D:
     def size(self):
         return self.boundary.N
 
-    def __eval__(self, k, z, x=None):
+    def __call__(self, k, z, x=None):
         if (x is None):
             pts = self.boundary.points()
             return mfsBasis(k, z - pts)
